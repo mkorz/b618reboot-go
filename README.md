@@ -12,7 +12,6 @@ Happy to accept improvements via pull requests!
 ```
 go get github.com/mkorz/b618reboot-go
 ```
-)
 ## Usage
 ### Command line
 #### Reboot:
@@ -32,17 +31,27 @@ Alternatively, instead of passing commandline parameters, you can provide the va
 ## Docker
 ### Reboot:
 ```
-docker run --rm -it  mkorz/b618reboot-go reboot -url http://192.168.1.1 -username admin -password ROUTER_ADMIN_PASSWORD
+docker run --rm -it mkorz/b618reboot-go \
+  reboot -url http://192.168.1.1 -username admin -password ROUTER_ADMIN_PASSWORD
 ```
 or using environment variables:
 ```
-docker run --rm -it -e ROUTER_URL=http://192.168.1.1 -e ROUTER_USERNAME=admin -e ROUTER_PASSWORD=ROUTER_ADMIN_PASSWORD mkorz/b618reboot-go reboot
+docker run --rm -it \
+  -e ROUTER_URL=http://192.168.1.1 \
+  -e ROUTER_USERNAME=admin \
+  -e ROUTER_PASSWORD=ROUTER_ADMIN_PASSWORD \
+  mkorz/b618reboot-go reboot
 ```
 ### Signal stats:
 ```
-docker run --rm -it  mkorz/b618reboot-go signal-stats -url http://192.168.1.1 -username admin -password ROUTER_ADMIN_PASSWORD
+docker run --rm -it mkorz/b618reboot-go \
+  signal-stats -url http://192.168.1.1 -username admin -password ROUTER_ADMIN_PASSWORD
 ```
 with environment variables:
 ```
-docker run --rm -it -e ROUTER_URL=http://192.168.1.1 -e ROUTER_USERNAME=admin -e ROUTER_PASSWORD=ROUTER_ADMIN_PASSWORD  mkorz/b618reboot-go signal-stats
+docker run --rm -it \
+  -e ROUTER_URL=http://192.168.1.1 \
+  -e ROUTER_USERNAME=admin \
+  -e ROUTER_PASSWORD=ROUTER_ADMIN_PASSWORD \
+  mkorz/b618reboot-go signal-stats
 ```
